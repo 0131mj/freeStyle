@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #dog{
+            width:250px;
+            /* opacity: 0; */
+        }
+        #num{
+            display: block;
+            margin: 0 auto;
+            width:100px;
+            height:60px;
+            line-height: 60px;
+            border: 1px solid #eee;
+            text-align: center;
+            font-size:40px;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <p id="num">10</p>
+</body>
+<script>
+    var num = document.getElementById('num');
+    var numText = parseInt(num.innerText);
+
+    setColor = (hex) => {
+        const newColor = '#'+hex+'78'+hex;
+        num.style.color = newColor;
+    }
+    
+
+    num.onclick = function(){
+        console.log(numText);
+        numText++;
+        num.innerHTML = numText;
+        setColor(numText);
+    };
+
+    let print = (msg) =>{
+        console.log(msg)
+    }
+    
+    setTimeout(() => {
+        print('timeOUt');    
+    }, 1000);
+
+    setInterval(() => {
+        print('interval');    
+    }, 1000);
+    
+
+
+</script>
+</html>
